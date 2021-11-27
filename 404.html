@@ -49,6 +49,7 @@
         if ( started == 0 ) {
           makestats("dl");
           gtag("event", "download", { id1: brid, id2: gpid });
+          started = 1;
           window.location.href = target;
         } else {
           makestats("alreadydl");
