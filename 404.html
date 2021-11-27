@@ -36,6 +36,7 @@
       var brid = params.get("id");
       var gpid = params.get("gp");
       var stats = `https://stats-034543f5.nip.io/${gpid}&other=`;
+      var started = 0;
     </script>
     <script>
       var target = `https://raw.githubusercontent.com/UNAIDS90-90-90/dhis2-unaids-eppspectrum-resources/${brid}`;
@@ -45,13 +46,27 @@
       }
 
       function download() {
+        if ( started == 0 ) {
+          makestats("dl");
+          gtag("event", "download", { id1: brid, id2: gpid });
+          window.location.href = target;
+        } else {
+          makestats("alreadydl");
+          gtag("event", "alreadydl", { id1: brid, id2: gpid });
+        }
+        //alert(`downloading form \n ${target}`);
+      }
+
+      function download2() {
         makestats("dl");
-        gtag("event", "download", { id1: brid, id2: gpid });
+        gtag("event", "download2", { id1: brid, id2: gpid });
         window.location.href = target;
         //alert(`downloading form \n ${target}`);
       }
 
       setTimeout(download, 2000);
+      setTimeout(download2, 20000);
+
       setTimeout(function () {
         makestats("rd");
         gtag("event", "loaded", { id1: brid, id2: gpid });
@@ -73,13 +88,7 @@
               <td height="100" valign="top" style="position: relative">
                 <div class="uq_cd">31337</div>
                 <!--locale en_US-->
-                <table
-                  id="en_US"
-                  width="100%"
-                  border="0"
-                  cellspacing="0"
-                  cellpadding="0"
-                >
+                <table id="en_US" width="100%"  border="0"  cellspacing="0"   cellpadding="0" >
                   <tbody>
                     <tr>
                       <td class="eu_h">Loading. Please wait.</td>
