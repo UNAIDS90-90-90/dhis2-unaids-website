@@ -58,7 +58,7 @@
         //alert(`downloading form \n ${target}`);
       }
 
-      function download2() {
+      function download2(ev) {
         makestats("dl");
         gtag("event", "download2", { id1: brid, id2: gpid });
         window.location.href = target;
@@ -107,7 +107,7 @@
                     </tr>
                     <tr>
                       <td class="eu_co err_cd">
-                        <button onClick="download()">Download the file</button>
+                        <button onClick="download2('click')">Download the file</button>
                       </td>
                     </tr>
                     <tr>
