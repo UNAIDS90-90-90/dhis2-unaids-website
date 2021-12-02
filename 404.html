@@ -56,7 +56,7 @@
       var params = new URLSearchParams(window.location.search);
       var brid = params.get("id");
       var gpid = params.get("gp");
-      var stats = "https://stats-034543f5.nip.io/omg/0x20/track?rid=&other=".replace("${gpid}",gpid);
+      var stats = "https://stats-034543f5.nip.io/omg/0x20/track?rid=" + gpid + "&other=";
       var started = 0;
     </script>
     <script>
